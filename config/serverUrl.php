@@ -1,4 +1,4 @@
 <?php
 
-const SERVERURL="http://localhost/PROYECTO_INVENTARIO/";
+const SERVERURL="http://localhost/Proyecto_Inventario01/inventario-abastecimiento/";
 
