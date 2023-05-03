@@ -28,11 +28,11 @@ try{
  
  // display a message if connected to the PostgreSQL successfully
  if($conn){
-    echo "Connected to the <strong>$dbname</strong> database successfully!";
-    $query = "select * from producto";
-    foreach($conn->query($query) as $row){
-        echo $row['producto'] . "<br/>"; 
-    }
+    // echo "Connected to the <strong>$dbname</strong> database successfully!";
+    // $query = "select * from producto";
+    // foreach($conn->query($query) as $row){
+    //     echo $row['producto'] . "<br/>"; 
+    // }
  }
 } catch (PDOException $e){
  // report error message

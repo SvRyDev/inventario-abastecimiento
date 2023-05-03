@@ -135,34 +135,29 @@
             <div class="pre-section-panel">
               <div class="seccion-panel">
                 <div class="section-titulo">
-                  Titulo
+                  Cargos
                 </div>
                 <table class="tabla-info">
                   <tr>
-                    <th>aasd</th>
-                    <th>asasd</th>
-                    <th>asdasd</th>
-                    <th>asdasd</th>
+                    <th>Id</th>
+                    <th>Cargo</th>
+                    <th>Descripcion</th>
+                    <th>Estado</th>
                   </tr>
+                  <?php 
+$query = "select * from cargo";
+foreach($conn->query($query) as $row){
+  ?>
+  <tr> 
+    <td><?php echo $row['idcargo'] ?> </td> 
+    <td><?php echo $row['nombre'] ?> </td> 
+    <td><?php echo $row['descripcion'] ?> </td> 
+    <td><?php echo $row['estado'] ?> </td> 
+</tr>
+<?php } ?>
+                
 
-                  <tr>
-                    <td>aasd</td>
-                    <td>asd</td>
-                    <td>aasd</td>
-                    <td>asd</td>
-                  </tr>
-                  <tr>
-                    <td>asd</td>
-                    <td>asd</td>
-                    <td>aasd</td>
-                    <td>asd</td>
-                  </tr>
-                  <tr>
-                    <td>as</td>
-                    <td>asd</td>
-                    <td>aasd</td>
-                    <td>asd</td>
-                  </tr>
+
                 </table>
               </div>
             </div>

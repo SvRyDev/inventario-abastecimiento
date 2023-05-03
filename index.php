@@ -41,6 +41,7 @@ include ("config/serverUrl.php");
 
                 <!-- VENTANA PRINCIPAL -->
                 <?php
+                
                 // LOAD VIEWS
                 if (isset($_GET['view'])) {
                     $view = explode("/", $_GET['view']);
