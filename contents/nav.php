@@ -53,7 +53,7 @@
                 </span>
             </li>
         </a>
-        <a href="index3.php">
+        <a href="<?php echo SERVERURL ?>agregar-producto.php">
             <li class="opcion-menu">
                 <i class="fa-solid fa-chart-simple"></i>
                 <span>
