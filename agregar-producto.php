@@ -2,8 +2,13 @@
 <html lang="en">
 
 <?php 
+
 include('config/serverUrl.php'); 
 include('sql/connectDB.php');
+
+
+date_default_timezone_set('America/Lima');
+echo date_default_timezone_get();
 ?>
 
 <head>
@@ -23,7 +28,7 @@ include('sql/connectDB.php');
     <form action="<?php echo SERVERURL ?>/sql/crud/insert-product.php" method="POST" >
 
     <label for= "fcodigo">Codigo</label>
-    <input type="text" name="fcodigo" id="fcodigo" placeholder="Ingrese Codigo" required /> <br/>
+    <input type="text" name="fcodigo" id="fcodigo" placeholder="Ingrese Codigo" oninvalid="this.setCustomValidity('Rellene los campos. No sea Imbecil >:v')" required /> <br/>
 
     <label for="freferencia">Referencia</label>
     <input type="text" name="freferencia" id="freferencia" placeholder="Referencia..." required /> <br/>
@@ -45,13 +50,13 @@ foreach($conn->query($query) as $row){
     <input type="text" name="fnombre" id="fnombre" placeholder="Ingrese Nombre..." required /><br/>
 
     <label for="fcantidad">Cantidad</label>
-    <input type="number" name="fcantidad" id="fcantidad" min="1" required /><br/>
+    <input type="number" name="fcantidad" id="fcantidad" min="1" pattern="^[0-9]+" required /><br/>
 
     <label for="fprecio">Precio (S./)</label>
     <input type="number" name="fprecio" id="fprecio" min="0" value="12" required /><br/>
 
     <label for="ffcreacion">Fecha</label>
-    <input type="datetime-local" name="ffcreacion" id="ffcreacion" required  value="<?php echo date('d-m-Y') . ''. date('')?>"/><br/>
+    <input type="datetime-local" name="ffcreacion" id="ffcreacion" required  value="<?php echo date('Y-m-d') . ' '. date('h:i')?>" disabled /><br/>
 
     <label for="festado">Tipo</label>
     <input type="checkbox" name="festado" id="festado"  /><br/>
@@ -59,5 +64,6 @@ foreach($conn->query($query) as $row){
     <input type="submit" value="Registrar" />
 
     </form>
+
 </body>
 </html>
