@@ -77,16 +77,16 @@
                         <th>Operacion</th>
                     </tr>
         <?php
-        $query = "SELECT * FROM PRODUCTO";
+        $query = "SELECT p.*, t.nombre as nombre_tipop FROM PRODUCTO p, tipo_prod t WHERE p.idtipo = t.idtipo ORDER BY idproducto ASC";
         foreach($conn->query($query) as $row){
                 ?>
                    <tr>
                         <td><?php echo $row['idproducto']?> </td>
-                        <td><i class="fa-solid fa-check"></i>
-                        <?php echo $row['estado']?></td>
+                        <td>
+                        <?php echo $row['estado'] ? '<i class="fa-solid fa-check"></i>' : '<i class="fa-solid fa-xmark"></i>'    ?></td>
                         <td><?php echo $row['codigo']?></td>
                         <td><?php echo $row['referencia']?></td>
-                        <td><?php echo $row['idtipo']?></td>
+                        <td><?php echo $row['nombre_tipop']?></td>
                         <td><?php echo $row['producto']?></td>
                         <td><?php echo $row['stock']?></td>
                         <td>S/. <?php echo $row['precio']?></td>

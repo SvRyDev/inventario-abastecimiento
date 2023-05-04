@@ -9,11 +9,21 @@
                 <p class="info-numero">0</p>
               </div>
               <div class="info-card verde">
-                Productos
+                Productos Activos
                 <p class="icon-card">
                   <i class="fa-solid fa-boxes-stacked"></i>
                 </p>
-                <p class="info-numero">2</p>
+                <p class="info-numero">
+
+                <?php
+                $query = "SELECT count(*) AS cantidad  FROM PRODUCTO WHERE estado='1' ";
+                $result = $conn->query($query);
+                foreach($conn->query($query) as $row){
+                    echo $row['cantidad'];
+                }
+                ?>
+
+</p>
               </div>
               <div class="info-card azul">
                 Operaciones
@@ -132,6 +142,7 @@
                 </script>
               </div>
             </div>
+
             <div class="pre-section-panel">
               <div class="seccion-panel">
                 <div class="section-titulo">
@@ -161,5 +172,34 @@ foreach($conn->query($query) as $row){
                 </table>
               </div>
             </div>
+
+            <div class="pre-section-panel">
+              <div class="seccion-panel">
+                <div class="section-titulo">
+                  Tipo de Productos Registrados
+                </div>
+                <table class="tabla-info">
+                <tr> 
+                  <th>Id</th>
+                  <th>Nombre</th>
+                  <th>Descripcion</th>
+                  <th>Estado</th>
+                </tr>
+                <?php 
+$query = "select * from tipo_prod";
+foreach($conn->query($query) as $row){
+  ?>
+  <tr> 
+    <td><?php echo $row['idtipo'] ?> </td> 
+    <td><?php echo $row['nombre'] ?> </td> 
+    <td><?php echo $row['descripcion'] ?> </td> 
+    <td><?php echo $row['estado'] ?> </td> 
+</tr>
+<?php } ?>
+                </table>
+              </div>
+            </div>
           </div>
+
+          
         </div>
