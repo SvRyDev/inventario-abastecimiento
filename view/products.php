@@ -95,8 +95,7 @@
                         <td><?php echo $row['fechaactualizacion']?></td>
                         <td>
                             
-                            <div class="button update" type="button" > Actualizar</div>
-                            <div class="button delete" type="button" > Eliminar</div>
+                            <a class="button-a" href="<?php echo SERVERURL . "update-producto.php?id=". $row['idproducto'] ?>" >Actualizar</a>
                         </td>
                     </tr>
                 <?php

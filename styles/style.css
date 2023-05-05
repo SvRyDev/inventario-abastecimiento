@@ -457,6 +457,7 @@ div {
     column-gap: 10px;
 }
 
+/*
 .button{
     width: 80px;
     height: 20px;
@@ -475,4 +476,9 @@ div {
 
 .delete {
     background-color: red
+}
+*/
+
+.button-a{
+    color: black;
 }

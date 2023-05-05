@@ -7,8 +7,7 @@ include('config/serverUrl.php');
 include('sql/connectDB.php');
 
 
-date_default_timezone_set('America/Lima');
-echo date_default_timezone_get();
+
 ?>
 
 <head>
@@ -25,7 +24,7 @@ echo date_default_timezone_get();
         Agregar nuevo Producto <?php echo SERVERURL ?>
     </h1>
 
-    <form action="<?php echo SERVERURL ?>/sql/crud/insert-product.php" method="POST" >
+    <form action="<?php echo SERVERURL ?>/sql/crud/c-producto.php" method="POST" >
 
     <label for= "fcodigo">Codigo</label>
     <input type="text" name="fcodigo" id="fcodigo" placeholder="Ingrese Codigo" oninvalid="this.setCustomValidity('Rellene los campos. No sea Imbecil >:v')" required /> <br/>
@@ -56,9 +55,9 @@ foreach($conn->query($query) as $row){
     <input type="number" name="fprecio" id="fprecio" min="0" value="12" required /><br/>
 
     <label for="ffcreacion">Fecha</label>
-    <input type="datetime-local" name="ffcreacion" id="ffcreacion" required  value="<?php echo date('Y-m-d') . ' '. date('h:i')?>" disabled /><br/>
+    <input type="datetime-local" name="ffcreacion" id="ffcreacion" required  value="<?php echo date('Y-m-d') . ' '. date('h:i')?>" readonly /><br/>
 
-    <label for="festado">Tipo</label>
+    <label for="festado">Habilitar</label>
     <input type="checkbox" name="festado" id="festado"  /><br/>
 
     <input type="submit" value="Registrar" />
