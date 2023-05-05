@@ -96,6 +96,7 @@
                         <td>
                             
                             <a class="button-a" href="<?php echo SERVERURL . "update-producto.php?id=". $row['idproducto'] ?>" >Actualizar</a>
+                            <a class="button-a" href="<?php echo SERVERURL . "eliminar-producto.php?id=". $row['idproducto'] ?>" >Eliminar</a>
                         </td>
                     </tr>
                 <?php
