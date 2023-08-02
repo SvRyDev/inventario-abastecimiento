@@ -2,7 +2,7 @@
 
 $port = "26257";
 $dburl = "arrow-shade-3774.g8z.cockroachlabs.cloud";
-$dbpassword = "UnI1_fcAHO0nxOqy7Fx7TQ";
+$dbpassword = "zQWSChuOOY8Im2Jp7f0_0w";
 $dbuser = "daniel";
 $dbname = "arrow-shade-3774.defaultdb";
 
